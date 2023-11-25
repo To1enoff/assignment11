@@ -1,0 +1,45 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Exercise 4</title>
+      <style>
+   .error-message {
+      color: red;
+      margin-top: 5px;
+   }
+
+      </style>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+   </head>
+   <body>
+
+   <div id="app">
+      <form @submit.prevent="submitForm">
+         <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" v-model="username">
+            <p class="error-message">{{ errors.username }}</p>
+         </div>
+
+         <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" v-model="email">
+            <p class="error-message">{{ errors.email }}</p>
+         </div>
+
+         <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" v-model="password">
+            <p class="error-message">{{ errors.password }}</p>
+         </div>
+
+         <button type="submit">Submit</button>
+      </form>
+   </div>
+
+
+      <script src="part4.js"></script>
+   </body>
+   </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+    <style>
+         .completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+   <ul>
+       <li v-for="(task, index) in tasks" :key="index">
+           <span :class="{ 'completed': task.completed }">
+               {{ task.title }}
+           </span>
+           <button @click="toggleTask(index)">Toggle</button>
+       </li>
+   </ul>
+
+   <div>
+       <label for="newTask">New Task:</label>
+       <input type="text" id="newTask" v-model="newTask">
+       <button @click="addTask">Add Task</button>
+   </div>
+</div>
+
+
+    <script src="part5.js"></script>
+</body>
+</html>
